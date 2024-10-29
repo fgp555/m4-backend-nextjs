@@ -1,0 +1,4 @@
+node_modules
+# .env
+.env.mysql_prod_giomr
+*_prod_*

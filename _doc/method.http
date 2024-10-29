@@ -1,0 +1,38 @@
+###
+GET http://localhost:3000/products
+
+###
+POST http://localhost:3000/users/register
+Content-Type: application/json
+token: autenticado
+
+{
+  "name": "John Doe",
+  "email": "john.doe@example.com",
+  "password": "securepassword",
+ "address": "123 Main St",
+  "phone": "555-1234"
+}
+
+###
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+    "email": "john.doe@example.com",
+    "password": "securepassword"
+}
+
+###
+POST http://localhost:3000/orders/
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTczMDEyNDkxNn0.t4-xJMcwmeVbPQSdxFaUDw4yE7ms_gdo2nK5H0OVlug
+
+{
+   "userId" : 1,
+  "products": [1, 2, 3]
+}
+
+###
+GET http://localhost:3000/users/orders
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTczMDEyNDkxNn0.t4-xJMcwmeVbPQSdxFaUDw4yE7ms_gdo2nK5H0OVlug
